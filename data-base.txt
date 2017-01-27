@@ -1,0 +1,23 @@
+{
+  users: {
+    USER_ID: {
+      boards: [
+        {
+          name: 'First board',
+          lists: [
+            {
+              name: 'First list',
+              tasks: [
+                message: 'First Task',
+                comments: COMMENTS_ID
+              ],
+              comments: [
+                'First comment'
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

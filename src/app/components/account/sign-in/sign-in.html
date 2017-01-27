@@ -1,0 +1,14 @@
+<div>
+  <h2>Sign in</h2>
+  <form #form="ngForm" (submit)="signIn(form)" novalidate autocomplete="off">
+    <div>
+      <input ngModel placeholder="Email" name="email" type="email" required/>
+    </div>
+    <div>
+      <input ngModel placeholder="Password" name="password" type="password" required/>
+    </div>
+    <div>
+      <button type="submit" [disabled]="form.invalid">Sign in</button>
+    </div>
+  </form>
+</div>

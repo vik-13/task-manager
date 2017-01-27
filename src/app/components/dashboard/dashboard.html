@@ -1,0 +1,8 @@
+<div class="boards">
+  <div class="board" *ngFor="let board of boards | async">
+    {{board.name}}<a (click)="remove(board.$key)">remove</a>
+  </div>
+</div>
+<div class="add-board">
+  <a (click)="addBoard()">Add Board</a>
+</div>
