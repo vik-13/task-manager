@@ -3,7 +3,8 @@ import {AngularFire} from "angularfire2";
 
 @Component({
   selector: 'sign-up',
-  templateUrl: './sign-up.html'
+  templateUrl: './sign-up.html',
+  styleUrls: ['./sign-up.scss']
 })
 
 export class SignUpComponent {

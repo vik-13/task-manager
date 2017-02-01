@@ -1,14 +1,16 @@
-<div>
-  <h2>Sign up</h2>
-  <form #form="ngForm" (submit)="signUp(form)" novalidate autocomplete="off">
-    <div>
-      <input ngModel placeholder="Email" name="email" type="email" required/>
-    </div>
-    <div>
-      <input ngModel placeholder="Password" name="password" type="password" required/>
-    </div>
-    <div>
-      <button type="submit" [disabled]="form.invalid">Sign Up</button>
-    </div>
-  </form>
-</div>
+<form #form="ngForm" (submit)="signUp(form)" novalidate autocomplete="off">
+  <md-card>
+    <md-card-title>Sign Up</md-card-title>
+    <md-card-content>
+      <div>
+        <md-input ngModel placeholder="Email" name="email" type="email" required></md-input>
+      </div>
+      <div>
+        <md-input ngModel placeholder="Password" name="password" type="password" required></md-input>
+      </div>
+    </md-card-content>
+    <md-card-actions align="right">
+      <button md-button color="primary" [disabled]="form.invalid">Sign Up</button>
+    </md-card-actions>
+  </md-card>
+</form>

@@ -10,7 +10,7 @@ export class DashboardComponent {
   boards: FirebaseListObservable<any>;
 
   constructor(private af: AngularFire) {
-    this.boards = af.database.list('/boards', {preserveSnapshot: true});
+    this.boards = af.database.list('/boards');
   }
 
   addBoard() {

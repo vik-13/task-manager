@@ -1,0 +1,10 @@
+<h1>{{name}}</h1>
+
+<div class="lists">
+  <div class="list" *ngFor="let list of lists | async">
+    {{list.name}}<button (click)="remove(list.$key)">remove</button>
+  </div>
+  <div class="add-list">
+    <button (click)="addList()">Add list</button>
+  </div>
+</div>

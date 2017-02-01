@@ -10,6 +10,8 @@ import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import {DashboardModule} from "./components/dashboard/dashboard.module";
 import {AuthProviders, AuthMethods, AngularFireModule} from "angularfire2";
+import {MaterialModule} from "@angular/material";
+import {BoardModule} from "./components/board/board.module";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDQsmDS_Z101-OTaYM-FHISOL5spr0jTWY",
@@ -35,9 +37,11 @@ const firebaseAuthConfig = {
 
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     RouterModule.forRoot(appRoutes),
+    MaterialModule.forRoot(),
 
     AccountModule,
     DashboardModule,
+    BoardModule,
     ZonesModule
   ],
   providers: [],

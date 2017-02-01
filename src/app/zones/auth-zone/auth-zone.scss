@@ -1,0 +1,11 @@
+.auth-zone {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .auth-zone-container {
+    width: 400px;
+  }
+}

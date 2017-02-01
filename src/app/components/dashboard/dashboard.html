@@ -1,6 +1,6 @@
 <div class="boards">
   <div class="board" *ngFor="let board of boards | async">
-    {{board.name}}<a (click)="remove(board.$key)">remove</a>
+    <a [routerLink]="['/board', board.$key]">{{board.name}}</a><a (click)="remove(board.$key)">remove</a>
   </div>
 </div>
 <div class="add-board">
