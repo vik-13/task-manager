@@ -37,9 +37,10 @@ export class DashboardComponent {
     });
   }
 
-  remove(event, key) {
+  remove(event, key, name) {
     event.stopPropagation();
     let dialogRef = this.dialog.open(RemoveBoardDialogComponent);
+    dialogRef.componentInstance.name = name;
     dialogRef.afterClosed().subscribe((confirm) => {
       if (confirm) {
         this.boards.remove(key);

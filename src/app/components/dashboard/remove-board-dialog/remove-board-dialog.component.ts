@@ -7,6 +7,8 @@ import {MdDialogRef} from "@angular/material";
   styleUrls: ['./remove-board-dialog.scss']
 })
 export class RemoveBoardDialogComponent {
+  name: string;
+
   constructor(public dialogRef: MdDialogRef<RemoveBoardDialogComponent>) {}
 
   remove() {
