@@ -3,7 +3,8 @@ import {AngularFire, FirebaseListObservable} from "angularfire2";
 
 @Component({
   selector: 'dashboard',
-  templateUrl: './dashboard.html'
+  templateUrl: './dashboard.html',
+  styleUrls: ['./dashboard.scss']
 })
 
 export class DashboardComponent {

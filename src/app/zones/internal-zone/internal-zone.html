@@ -1,2 +1,8 @@
-Internal zone
-<router-outlet></router-outlet>
+<div class="internal-zone">
+  <md-toolbar color="primary">
+    <a md-raised-button color="primary" [routerLink]="['/dashboard']">BOARDS</a>
+    <span class="title flex">Task manager</span>
+    <button md-button color="accent" (click)="signOut()">LOGOUT</button>
+  </md-toolbar>
+  <router-outlet></router-outlet>
+</div>

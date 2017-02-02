@@ -1,2 +1,17 @@
 @import "../node_modules/normalize.css/normalize.css";
 @import "../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber";
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  flex: 1;
+}
