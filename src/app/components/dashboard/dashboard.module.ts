@@ -3,7 +3,7 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {MdButtonModule, MdIconModule, MdDialogModule, MdInputModule} from "@angular/material";
-import {AddBoardDialogComponent} from "./add-board-dialog/add-board-dialog.component";
+import {BoardDialogComponent} from "./board-dialog/board-dialog.component";
 import {FormsModule} from "@angular/forms";
 import {RemoveBoardDialogComponent} from "./remove-board-dialog/remove-board-dialog.component";
 
@@ -20,11 +20,11 @@ import {RemoveBoardDialogComponent} from "./remove-board-dialog/remove-board-dia
   ],
   declarations: [
     DashboardComponent,
-    AddBoardDialogComponent,
+    BoardDialogComponent,
     RemoveBoardDialogComponent
   ],
   entryComponents: [
-    AddBoardDialogComponent,
+    BoardDialogComponent,
     RemoveBoardDialogComponent
   ]
 })

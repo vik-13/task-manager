@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import {MdDialog} from "@angular/material";
-import {AddBoardDialogComponent} from "./add-board-dialog/add-board-dialog.component";
+import {BoardDialogComponent} from "./board-dialog/board-dialog.component";
 import {RemoveBoardDialogComponent} from "./remove-board-dialog/remove-board-dialog.component";
 
 @Component({
@@ -17,11 +17,22 @@ export class DashboardComponent {
     this.boards = af.database.list('/boards');
   }
 
-  addBoard() {
-    let dialogRef = this.dialog.open(AddBoardDialogComponent);
+  add() {
+    let dialogRef = this.dialog.open(BoardDialogComponent);
     dialogRef.afterClosed().subscribe((boardName) => {
       if (boardName) {
         this.boards.push({name: boardName});
+      }
+    });
+  }
+
+  edit(event, key, name) {
+    event.stopPropagation();
+    let dialogRef = this.dialog.open(BoardDialogComponent);
+    dialogRef.componentInstance.name = name;
+    dialogRef.afterClosed().subscribe((boardName) => {
+      if (boardName) {
+        this.boards.update(key, {name: boardName});
       }
     });
   }

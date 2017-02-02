@@ -1,0 +1,13 @@
+<div class="dialog">
+  <form #form="ngForm" (submit)="save(form)" novalidate autocomplete="off">
+    <h2 md-dialog-title>{{name ? 'Update board' : 'Add board'}}</h2>
+    <div md-dialog-content>
+      <div>
+        <md-input ngModel="{{name}}" placeholder="Enter board name" name="name" required></md-input>
+      </div>
+    </div>
+    <div md-dialog-actions align="right">
+      <button md-raised-button color="primary" [disabled]="form.invalid">{{name ? 'Update' : 'Add'}}</button>
+    </div>
+  </form>
+</div>
