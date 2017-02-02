@@ -2,6 +2,10 @@
 @import "../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber";
 
 
+md-input {
+  width: 100%;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

@@ -1,8 +1,8 @@
 <div class="dashboard">
   <div class="boards">
-    <div class="board" *ngFor="let board of boards | async">
-      <span class="title" [routerLink]="['/board', board.$key]">{{board.name}}</span>
-      <button class="remove-link" md-icon-button (click)="remove(board.$key)"><md-icon color="warn">delete</md-icon></button>
+    <div class="board" color="primary" [routerLink]="['/board', board.$key]" *ngFor="let board of boards | async">
+      <span class="title">{{board.name}}</span>
+      <button class="remove-link" md-icon-button (click)="remove($event, board.$key)"><md-icon color="warn">delete</md-icon></button>
     </div>
   </div>
 
