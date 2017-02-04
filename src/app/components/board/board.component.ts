@@ -4,7 +4,8 @@ import {FirebaseListObservable, AngularFire} from "angularfire2";
 
 @Component({
   selector: 'board',
-  templateUrl: './board.html'
+  templateUrl: './board.html',
+  styleUrls: ['./board.scss']
 })
 export class BoardComponent {
   name: string;

@@ -1,10 +1,26 @@
 <h1>{{name}}</h1>
+<div class="lists flex">
+  <div class="lists-container">
+    <div class="list" *ngFor="let list of lists | async">
+      <md-list>
+        <md-list-item>
+          <span>{{list.name}}</span>
+          <span class="flex"></span>
+          <button md-icon-button (click)="remove(list.$key)"><md-icon color="warn">delete</md-icon></button>
+        </md-list-item>
+        <md-list-item>
+          <span>{{list.name}}</span>
+          <span class="flex"></span>
+          <button md-icon-button (click)="remove(list.$key)"><md-icon color="warn">delete</md-icon></button>
+        </md-list-item>
+        <md-list-item>
+          <span>{{list.name}}</span>
+          <span class="flex"></span>
+          <button md-icon-button (click)="remove(list.$key)"><md-icon color="warn">delete</md-icon></button>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
 
-<div class="lists">
-  <div class="list" *ngFor="let list of lists | async">
-    {{list.name}}<button (click)="remove(list.$key)">remove</button>
-  </div>
-  <div class="add-list">
-    <button (click)="addList()">Add list</button>
-  </div>
+  <button class="add-list-link" md-fab (click)="addList()"><md-icon color="primary">add</md-icon></button>
 </div>
