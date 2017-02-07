@@ -12,6 +12,7 @@ import {DashboardModule} from "./components/dashboard/dashboard.module";
 import {AuthProviders, AuthMethods, AngularFireModule} from "angularfire2";
 import {MaterialModule} from "@angular/material";
 import {BoardModule} from "./components/board/board.module";
+import {SharedModule} from "./shared/shared.module";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDQsmDS_Z101-OTaYM-FHISOL5spr0jTWY",
@@ -42,7 +43,9 @@ const firebaseAuthConfig = {
     AccountModule,
     DashboardModule,
     BoardModule,
-    ZonesModule
+    ZonesModule,
+
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

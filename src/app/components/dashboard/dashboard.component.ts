@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import {MdDialog} from "@angular/material";
 import {BoardDialogComponent} from "./board-dialog/board-dialog.component";
-import {RemoveBoardDialogComponent} from "./remove-board-dialog/remove-board-dialog.component";
+import {RemoveModalComponent} from "../../shared/remove-modal/remove-modal.component";
 
 @Component({
   selector: 'dashboard',
@@ -39,12 +39,10 @@ export class DashboardComponent {
 
   remove(event, key, name) {
     event.stopPropagation();
-    let dialogRef = this.dialog.open(RemoveBoardDialogComponent);
+    let dialogRef = this.dialog.open(RemoveModalComponent);
     dialogRef.componentInstance.name = name;
     dialogRef.afterClosed().subscribe((confirm) => {
-      if (confirm) {
-        this.boards.remove(key);
-      }
+      confirm && this.boards.remove(key);
     });
   }
 

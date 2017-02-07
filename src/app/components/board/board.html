@@ -2,21 +2,26 @@
 <div class="lists flex">
   <div class="lists-container">
     <div class="list" *ngFor="let list of lists | async">
+      <div class="list-header flex-row">
+        <h3>{{list.name}}</h3>
+        <span class="flex"></span>
+        <button class="remove-link" md-icon-button (click)="removeList(list.$key, list.name)"><md-icon color="warn">delete</md-icon></button>
+      </div>
       <md-list>
         <md-list-item>
-          <span>{{list.name}}</span>
+          <span>Task name</span>
           <span class="flex"></span>
-          <button md-icon-button (click)="remove(list.$key)"><md-icon color="warn">delete</md-icon></button>
+          <button md-icon-button (click)="removeList(list.$key, list.name)"><md-icon color="warn">delete</md-icon></button>
         </md-list-item>
         <md-list-item>
-          <span>{{list.name}}</span>
+          <span>Task name</span>
           <span class="flex"></span>
-          <button md-icon-button (click)="remove(list.$key)"><md-icon color="warn">delete</md-icon></button>
+          <button md-icon-button (click)="removeList(list.$key, list.name)"><md-icon color="warn">delete</md-icon></button>
         </md-list-item>
         <md-list-item>
-          <span>{{list.name}}</span>
+          <span>Task name</span>
           <span class="flex"></span>
-          <button md-icon-button (click)="remove(list.$key)"><md-icon color="warn">delete</md-icon></button>
+          <button md-icon-button (click)="removeList(list.$key, list.name)"><md-icon color="warn">delete</md-icon></button>
         </md-list-item>
       </md-list>
     </div>

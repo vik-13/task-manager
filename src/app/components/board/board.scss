@@ -2,6 +2,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .lists {
@@ -16,7 +17,28 @@
       width: 260px;
       margin: 0 16px;
 
+      background-color: #673ab7;
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+
+      .list-header {
+        height: 46px;
+        align-items: center;
+        padding: 0 8px;
+      }
+
+      .remove-link {
+        display: none;
+      }
+
+      h3 {
+        color: #ffffff;
+        margin: 0;
+      }
+
+      md-list-item {
+        margin: 8px;
+        background-color: #ffffff;
+      }
 
       &:first-child {
         margin-left: 32px;
@@ -25,12 +47,18 @@
       &:last-child {
         margin-right: 32px;
       }
+
+      &:hover {
+        .remove-link {
+          display: block;
+        }
+      }
     }
   }
 }
 
 .add-list-link {
   position: absolute;
-  right: 64px;
-  bottom: 64px;
+  right: 16px;
+  top: 16px;
 }

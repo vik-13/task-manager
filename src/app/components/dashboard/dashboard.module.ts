@@ -5,7 +5,6 @@ import {RouterModule} from "@angular/router";
 import {MdButtonModule, MdIconModule, MdDialogModule, MdInputModule} from "@angular/material";
 import {BoardDialogComponent} from "./board-dialog/board-dialog.component";
 import {FormsModule} from "@angular/forms";
-import {RemoveBoardDialogComponent} from "./remove-board-dialog/remove-board-dialog.component";
 
 @NgModule({
   imports: [
@@ -20,12 +19,10 @@ import {RemoveBoardDialogComponent} from "./remove-board-dialog/remove-board-dia
   ],
   declarations: [
     DashboardComponent,
-    BoardDialogComponent,
-    RemoveBoardDialogComponent
+    BoardDialogComponent
   ],
   entryComponents: [
-    BoardDialogComponent,
-    RemoveBoardDialogComponent
+    BoardDialogComponent
   ]
 })
 

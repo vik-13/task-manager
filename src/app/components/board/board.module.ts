@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {BoardComponent} from "./board.component";
 import {CommonModule} from "@angular/common";
 import {ListComponent} from "./list/list.component";
-import {MdListModule, MdButtonModule, MdIconModule} from "@angular/material";
+import {MdListModule, MdButtonModule, MdIconModule, MdDialogModule} from "@angular/material";
 
 @NgModule({
   imports: [
@@ -10,7 +10,8 @@ import {MdListModule, MdButtonModule, MdIconModule} from "@angular/material";
 
     MdListModule,
     MdButtonModule,
-    MdIconModule
+    MdIconModule,
+    MdDialogModule
   ],
   declarations: [
     BoardComponent,

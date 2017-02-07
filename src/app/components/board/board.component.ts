@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {FirebaseListObservable, AngularFire} from "angularfire2";
+import {MdDialog} from "@angular/material";
+import {RemoveModalComponent} from "../../shared/remove-modal/remove-modal.component";
 
 @Component({
   selector: 'board',
@@ -13,7 +15,7 @@ export class BoardComponent {
 
   boardSubscriber: any;
 
-  constructor(private route: ActivatedRoute, private af: AngularFire) {
+  constructor(private route: ActivatedRoute, private af: AngularFire, public dialog: MdDialog) {
     this.route.params.subscribe((params) => {
       this.boardSubscriber && this.boardSubscriber.unsubscribe();
       this.boardSubscriber = af.database.object('boards/' + params['id']).subscribe((snapshot) => {
@@ -29,7 +31,11 @@ export class BoardComponent {
     });
   }
 
-  removeList(key) {
-    this.lists.remove(key);
+  removeList(key, name) {
+  let dialogRef = this.dialog.open(RemoveModalComponent);
+    dialogRef.componentInstance.name = name;
+    dialogRef.afterClosed().subscribe((confirm) => {
+      confirm && this.lists.remove(key);
+    });
   }
 }
