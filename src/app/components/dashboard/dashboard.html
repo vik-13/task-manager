@@ -3,8 +3,8 @@
     <div class="board" color="primary" [routerLink]="['/board', board.$key]" *ngFor="let board of boards | async">
       <span class="title">{{board.name}}</span>
       <div class="actions">
-        <button class="edit-link" md-icon-button (click)="edit(board.$key, board.name)"><md-icon color="accent">mode_edit</md-icon></button>
-        <button class="remove-link" md-icon-button (click)="remove(board.$key, board.name)"><md-icon color="warn">delete</md-icon></button>
+        <button class="edit-link" md-icon-button (click)="edit($event, board.$key, board.name)"><md-icon color="accent">mode_edit</md-icon></button>
+        <button class="remove-link" md-icon-button (click)="remove($event, board.$key, board.name)"><md-icon color="warn">delete</md-icon></button>
       </div>
     </div>
   </div>

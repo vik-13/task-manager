@@ -45,5 +45,4 @@ export class DashboardComponent {
       confirm && this.boards.remove(key);
     });
   }
-
 }

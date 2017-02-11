@@ -1,0 +1,8 @@
+<div class="task" *ngIf="!editMode" (dblclick)="toEditMode()">
+  <span class="task-content">{{task.name}}</span>
+  <span class="flex"></span>
+  <button md-icon-button (click)="remove()"><md-icon color="warn">delete</md-icon></button>
+</div>
+<div class="add-task" *ngIf="editMode">
+  <textarea #textarea [ngModel]="task.name" (keyup)="keyUp($event)" (keypress)="keyPress($event, textarea)"></textarea>
+</div>

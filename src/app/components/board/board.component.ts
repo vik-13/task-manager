@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {FirebaseListObservable, AngularFire} from "angularfire2";
 import {MdDialog} from "@angular/material";
-import {RemoveModalComponent} from "../../shared/remove-modal/remove-modal.component";
+import {ListDialogComponent} from "./list-dialog/list-dialog.component";
 
 @Component({
   selector: 'board',
@@ -10,6 +10,7 @@ import {RemoveModalComponent} from "../../shared/remove-modal/remove-modal.compo
   styleUrls: ['./board.scss']
 })
 export class BoardComponent {
+  boardId: string;
   name: string;
   lists: FirebaseListObservable<any>;
 
@@ -17,25 +18,21 @@ export class BoardComponent {
 
   constructor(private route: ActivatedRoute, private af: AngularFire, public dialog: MdDialog) {
     this.route.params.subscribe((params) => {
+      this.boardId = params['id'];
       this.boardSubscriber && this.boardSubscriber.unsubscribe();
-      this.boardSubscriber = af.database.object('boards/' + params['id']).subscribe((snapshot) => {
+      this.boardSubscriber = af.database.object('boards/' + this.boardId).subscribe((snapshot) => {
         this.name = snapshot.name;
       });
-      this.lists = af.database.list('boards/' + params['id'] + '/lists');
+      this.lists = af.database.list('boards/' + this.boardId + '/lists');
     });
   }
 
   addList() {
-    this.lists.push({
-      name: 'Some list'
-    });
-  }
-
-  removeList(key, name) {
-  let dialogRef = this.dialog.open(RemoveModalComponent);
-    dialogRef.componentInstance.name = name;
-    dialogRef.afterClosed().subscribe((confirm) => {
-      confirm && this.lists.remove(key);
+    let dialogRef = this.dialog.open(ListDialogComponent);
+    dialogRef.afterClosed().subscribe((listName) => {
+      if (listName) {
+        this.lists.push({name: listName});
+      }
     });
   }
 }
