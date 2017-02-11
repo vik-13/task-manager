@@ -7,11 +7,13 @@ import {ListDialogComponent} from "./list-dialog/list-dialog.component";
 import {FormsModule} from "@angular/forms";
 import {TaskComponent} from "./list/task/task.component";
 import {AddTaskComponent} from "./list/add-task/add-task.component";
+import {DragulaModule} from "ng2-dragula";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    DragulaModule,
 
     MdListModule,
     MdButtonModule,

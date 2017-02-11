@@ -1,3 +1,11 @@
+:host {
+  &.gu-transit {
+    .task {
+      opacity: 0.2;
+    }
+  }
+}
+
 .task {
   display: flex;
   align-items: center;

@@ -13,6 +13,7 @@ import {AuthProviders, AuthMethods, AngularFireModule} from "angularfire2";
 import {MaterialModule} from "@angular/material";
 import {BoardModule} from "./components/board/board.module";
 import {SharedModule} from "./shared/shared.module";
+import {DragulaModule} from "ng2-dragula";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDQsmDS_Z101-OTaYM-FHISOL5spr0jTWY",
@@ -39,6 +40,7 @@ const firebaseAuthConfig = {
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     RouterModule.forRoot(appRoutes),
     MaterialModule.forRoot(),
+    DragulaModule,
 
     AccountModule,
     DashboardModule,

@@ -13,38 +13,33 @@
     padding: 0 8px;
 
     h3 {
+      color: #ffffff;
+      margin: 0;
       max-width: 180px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      cursor: default;
+    }
+
+    .remove-link {
+      display: none;
+    }
+
+    &:hover {
+      .remove-link {
+        display: block;
+      }
     }
   }
 
-  .edit-link, .remove-link {
-    display: none;
+  .tasks {
+    min-height: 8px;
   }
 
-  h3 {
-    color: #ffffff;
-    margin: 0;
-  }
-
-  md-list-item {
-    margin: 8px;
-    background-color: #ffffff;
-  }
-
-  &:first-child {
-    margin-left: 32px;
-  }
-
-  &:last-child {
-    margin-right: 32px;
-  }
-
-  &:hover {
-    .edit-link, .remove-link {
-      display: block;
-    }
+  .no-tasks {
+    padding: 8px;
+    color: white;
+    font-size: 12px;
   }
 }

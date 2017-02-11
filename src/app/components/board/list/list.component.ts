@@ -38,6 +38,10 @@ export class ListComponent {
 
   ngOnChanges() {
     this.listRef = this.af.database.object('boards/' + this.boardId + '/lists/' + this.list.$key);
-    this.tasksRef = this.af.database.list('boards/' + this.boardId + '/lists/' + this.list.$key + '/tasks');
+    this.tasksRef = this.af.database.list('boards/' + this.boardId + '/lists/' + this.list.$key + '/tasks', {
+      query: {
+        orderByChild: 'sortKey'
+      }
+    });
   }
 }

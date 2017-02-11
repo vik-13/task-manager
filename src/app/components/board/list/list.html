@@ -1,11 +1,14 @@
 <div class="list">
-  <div class="list-header flex-row">
-    <h3 (dblclick)="edit()">{{list.name}}</h3>
+  <div class="list-header flex-row" (dblclick)="edit()">
+    <h3>{{list.name}}</h3>
     <span class="flex"></span>
     <button class="remove-link" md-icon-button (click)="remove()"><md-icon color="warn">delete</md-icon></button>
   </div>
-  <div class="tasks">
-    <task [boardId]="boardId" [listId]="list.$key" [task]="task" *ngFor="let task of tasksRef | async"></task>
-    <add-task [boardId]="boardId" [list]="list"></add-task>
+  <div class="tasks" [dragula]="'tasks'" [attr.key]="list.$key">
+    <task [boardId]="boardId" [attr.key]="task.$key" [attr.message]="task.message" [listId]="list.$key" [task]="task" *ngFor="let task of tasksRef | async"></task>
   </div>
+  <div class="no-tasks" *ngIf="!(tasksRef | async)?.length">
+    No tasks to show here...
+  </div>
+  <add-task [boardId]="boardId" [list]="list"></add-task>
 </div>

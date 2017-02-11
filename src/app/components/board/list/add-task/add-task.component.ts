@@ -28,7 +28,7 @@ export class AddTaskComponent {
 
   keyPress(event, textarea) {
     if (event.keyCode == 13 && textarea.value) {
-      this.tasksRef.push({name: textarea.value});
+      this.tasksRef.push({sortKey: (new Date()).getTime(), message: textarea.value});
       this.editMode = false;
     }
   }

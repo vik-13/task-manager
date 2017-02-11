@@ -1,8 +1,10 @@
-<h1>{{name}}</h1>
+<div class="board-header flex-row">
+  <h1>{{name}}</h1>
+  <span class="flex"></span>
+  <button class="add-list-link" md-fab (click)="addList()"><md-icon color="primary">add</md-icon></button>
+</div>
 <div class="lists flex">
   <div class="lists-container">
     <list [boardId]="boardId" [list]="list" *ngFor="let list of lists | async"></list>
   </div>
-
-  <button class="add-list-link" md-fab (click)="addList()"><md-icon color="primary">add</md-icon></button>
 </div>

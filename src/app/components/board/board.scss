@@ -5,17 +5,17 @@
   position: relative;
 }
 
+.board-header {
+  height: 80px;
+  padding: 0 16px;
+  align-items: center;
+}
+
 .lists {
   overflow: auto;
 
   .lists-container {
     white-space: nowrap;
-    padding-top: 16px;
+    padding: 16px 0;
   }
-}
-
-.add-list-link {
-  position: absolute;
-  right: 16px;
-  top: 16px;
 }
