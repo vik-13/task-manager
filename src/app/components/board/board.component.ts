@@ -15,10 +15,12 @@ export class BoardComponent {
   name: string;
   lists: FirebaseListObservable<any>;
 
+  routeSubscriber: any;
   boardSubscriber: any;
+  dropSubscriber: any;
 
   constructor(private route: ActivatedRoute, private af: AngularFire, public dialog: MdDialog, private dg: DragulaService) {
-    this.route.params.subscribe((params) => {
+    this.routeSubscriber = this.route.params.subscribe((params) => {
       this.boardId = params['id'];
       this.boardSubscriber && this.boardSubscriber.unsubscribe();
       this.boardSubscriber = af.database.object('boards/' + this.boardId).subscribe((snapshot) => {
@@ -27,7 +29,7 @@ export class BoardComponent {
       this.lists = af.database.list('boards/' + this.boardId + '/lists');
     });
 
-    dg.drop.subscribe((value) => {
+    this.dropSubscriber = dg.drop.subscribe((value) => {
       let task = {key: value[1].getAttribute('key'), message: value[1].getAttribute('message')},
         next = value[4] && value[4].getAttribute('key') || null,
         from = value[3].getAttribute('key'),
@@ -99,5 +101,11 @@ export class BoardComponent {
         this.lists.push({name: listName});
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.routeSubscriber && this.routeSubscriber.unsubscribe();
+    this.boardSubscriber && this.boardSubscriber.unsubscribe();
+    this.dropSubscriber && this.dropSubscriber.unsubscribe();
   }
 }
