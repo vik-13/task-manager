@@ -31,7 +31,7 @@ export class TaskComponent {
 
   keyPress(event, textarea) {
     if (event.keyCode == 13 && textarea.value) {
-      this.taskRef.update({name: textarea.value});
+      this.taskRef.update({message: textarea.value});
       this.editMode = false;
     }
   }

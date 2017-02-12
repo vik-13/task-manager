@@ -34,10 +34,11 @@
   }
 
   .tasks {
-    min-height: 8px;
+    min-height: 16px;
   }
 
   .no-tasks {
+    display: none;
     padding: 8px;
     color: white;
     font-size: 12px;

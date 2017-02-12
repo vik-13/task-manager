@@ -37,10 +37,9 @@ export class BoardComponent {
     });
   }
 
+  //TODO: Should be refactored...
   move(task, next, from, to) {
     let fromList, toList, prevSortKey = 0, newSortKey, subscriber, origin;
-
-    console.log(task, next, from, to);
 
     fromList = this.af.database.list('boards/' + this.boardId + '/lists/' + from + '/tasks', {
       query: {
@@ -71,8 +70,6 @@ export class BoardComponent {
 
       fromList.remove(task.key);
       if (!next) {
-
-        console.log(to, task.message);
         toList.push({
           sortKey: (new Date()).getTime(),
           message: task.message
@@ -81,7 +78,6 @@ export class BoardComponent {
         subscriber = toList.subscribe((snapshots) => {
           snapshots.forEach((snapshot) => {
             if (snapshot.$key == next) {
-              console.log(snapshot.sortKey, prevSortKey);
               newSortKey = (snapshot.sortKey + prevSortKey) / 2;
             }
             prevSortKey = snapshot.sortKey;
