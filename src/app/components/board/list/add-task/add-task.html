@@ -1,4 +1,4 @@
 <div class="add-task" (click)="toEditMode()">
   <span *ngIf="!editMode">Add new task</span>
-  <textarea *ngIf="editMode" #textarea (keyup)="keyUp($event)" (keypress)="keyPress($event, textarea)"></textarea>
+  <textarea *ngIf="editMode" tmFocus #textarea (keyup)="keyUp($event)" (blur)="cancel()" (keypress)="keyPress($event, textarea)"></textarea>
 </div>

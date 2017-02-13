@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import {TaskComponent} from "./list/task/task.component";
 import {AddTaskComponent} from "./list/add-task/add-task.component";
 import {DragulaModule} from "ng2-dragula";
+import {FocusDirective} from "../../shared/focus/focus.directive";
 
 @NgModule({
   imports: [
@@ -26,7 +27,9 @@ import {DragulaModule} from "ng2-dragula";
     ListComponent,
     TaskComponent,
     AddTaskComponent,
-    ListDialogComponent
+    ListDialogComponent,
+
+    FocusDirective
   ],
   entryComponents: [
     ListDialogComponent

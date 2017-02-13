@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import {MdButtonModule, MdIconModule, MdDialogModule, MdInputModule} from "@angular/material";
 import {BoardDialogComponent} from "./board-dialog/board-dialog.component";
 import {FormsModule} from "@angular/forms";
+import {VuAsyncPipe} from "../../shared/async/async.pipe";
 
 @NgModule({
   imports: [
@@ -15,11 +16,12 @@ import {FormsModule} from "@angular/forms";
     MdDialogModule,
     MdButtonModule,
     MdIconModule,
-    MdInputModule
+    MdInputModule,
   ],
   declarations: [
     DashboardComponent,
-    BoardDialogComponent
+    BoardDialogComponent,
+    VuAsyncPipe
   ],
   entryComponents: [
     BoardDialogComponent

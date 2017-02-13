@@ -4,5 +4,5 @@
   <button md-icon-button (click)="remove()"><md-icon color="warn">delete</md-icon></button>
 </div>
 <div class="add-task" *ngIf="editMode">
-  <textarea #textarea [ngModel]="task.message" (keyup)="keyUp($event)" (keypress)="keyPress($event, textarea)"></textarea>
+  <textarea #textarea tmFocus [ngModel]="task.message" (keyup)="keyUp($event)" (blur)="cancel()" (keypress)="keyPress($event, textarea)"></textarea>
 </div>

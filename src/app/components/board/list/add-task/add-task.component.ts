@@ -20,6 +20,10 @@ export class AddTaskComponent {
     this.editMode = true;
   }
 
+  cancel() {
+    this.editMode = false;
+  }
+
   keyUp(event) {
     if (event.keyCode == 27) {
       this.editMode = false;
